@@ -1,23 +1,35 @@
 Doctype
 html
   head
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
     title MicroService
     link(rel="stylesheet", href="style.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
   body
     h1 TimeStamp Microservice
     h2 This applicaton meets the following user stories
     ul
-      li User Story: I can pass a string as a parameter, and it will check to see whether that string contains either a unix 
-      | timestamp or a natural language date (example: January 1, 2016).
+      li <b> User Story:</b> I can pass a string as a parameter, and it will check to see whether that string contains either a unix 
+        | timestamp or a natural language date (example: January 1, 2016).
 
-      li User Story: If it does, it returns both the Unix timestamp and the natural language form of that date.
+      li <b>User Story:</b> If it does, it returns both the Unix timestamp and the natural language form of that date.
 
-      li User Story: If it does not contain a date or Unix timestamp, it returns null for those properties.
-      | footer
-
+      li <b> User Story: </b>If it does not contain a date or Unix timestamp, it returns null for those properties.
+        | footer
+     
     h2 Example of use
-    p: span.highlight=`${siteUrl}December 14, 2017`
-    p: span.highlight=`${siteUrl}1670126400`
+    p: span.highlight: a.url(href="#") December 14, 2017
+    p: span.highlight: a.url(href="#") 1513224000
 
     h2 It should response: 
     p: span.highlight=example
+
+    script.
+      const url = document.querySelectorAll('.url')
+      url.forEach((item) => {
+       item.innerHTML = `${window.location.origin}/${item.innerHTML}`
+       item.href = item.innerHTML
+      })
+
+    footer
+      small made with <stroke> vscode</stroke> <stroke>code</stroke> <stroke>music</stroke> and Love by <a href="https://jesusantguerrero.com"> Jesus Guerrero </a>

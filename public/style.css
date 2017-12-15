@@ -10,32 +10,46 @@
 
 body {
   font-family: helvetica, arial, sans-serif;
-  margin: 25px;
-  color: #333
+  padding: 25px;
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   font-weight: bold;
-  color: rgb(31, 182, 17);
+  color: rgb(71, 223, 54);
 }
 
 h2 {
   color: #3b75f2f7
 }
-
+ul {
+  padding-left: 0
+}
 li {
-  margin: 5px 
+  margin: 15px 5px;
+  list-style: none;
+  max-width: 900px;
 }
 
 .bold {
   font-weight: bold;
 }
 
-p {
-  max-width: 600px;
+.highlight{
+  background-color: rgba(0, 255, 64, 0.207);
+  cursor: pointer
 }
-
 .highlight:hover {
   background-color: rgba(0, 255, 64, 0.371);
+}
+
+.stroke {
+  font-style: italic;
+  text-decoration: stroke;
 }
 

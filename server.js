@@ -12,8 +12,7 @@ app.set('views', __dirname + '/views')
 
 app.get("/", function (req, res) {
   const example = new dateHelper('December 14, 2017');
-  const siteUrl = req.baseUrl
-  res.render('index', {example: example.toString(), siteUrl});
+  res.render('index', {example: JSON.stringify(example)});
 });
 
 app.get("/:date", function (req, res) {
