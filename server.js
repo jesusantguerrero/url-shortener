@@ -1,23 +1,27 @@
-// server.js
-// where your node app starts
 
-// init project
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 const dateHelper = require('./public/dateHelper')
 
+//config
 app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views')
 
+// routes
+
 app.get("/", function (req, res) {
-  res.render('index');
+  const example = new dateHelper('December 14, 2017');
+  const siteUrl = req.baseUrl
+  res.render('index', {example: example.toString(), siteUrl});
 });
 
 app.get("/:date", function (req, res) {
-  console.log(req.params.date);
-  res.render('index');
+  let date = req.params.date;
+  if (/\d|$dddd/i.test(date.toString()))
+    date = new dateHelper(date);
+  res.json(date);
 });
 
-// listen for requests :)
-var listener = app.listen(process.env.PORT);
+var listener = app.listen(process.env.PORT || 3000, (res) => {
+});
