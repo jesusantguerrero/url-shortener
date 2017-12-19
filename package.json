@@ -1,13 +1,15 @@
 {
-  "name": "my-glitch-app",
+  "name": "url-shortener",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Microservice to give a shorter url from a real url",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "express": "4.16.2",
+    "mongoose": "4.13.7",
     "pug": "2.0.0-rc.4"
   },
   "engines": {
