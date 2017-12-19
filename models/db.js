@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const stringConn = 'mongodb://freesgen:samielfuerte@ds135966.mlab.com:35966/learnyoumongo'
 
-mongoose.connect(stringConn, {
+mongoose.connect(process.env.DB_STRING, {
   useMongoClient: true
 })
 
