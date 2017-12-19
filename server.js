@@ -12,7 +12,11 @@ app.set('views', __dirname + '/views')
 
 // routes
 app.get('/', (req, res)=> {
-  res.render('index');
+  const example = {
+  "original_url": "https://jesusantguerrero.com",
+  "shorten_url": "https://srt.glitch.me/c1f7bf"
+  }
+  res.render('index', {example: example});
 });
 
 app.get('/api/*',(req, res) => {
@@ -22,7 +26,7 @@ app.get('/api/*',(req, res) => {
     .then((data) => {
       const datas = {
         original_url: data.original_url,
-        shorten_url: `${req.hostname}/${data._id.toString().slice(-6)}` 
+        shorten_url: `https://${req.hostname}/${data._id.toString().slice(-6)}` 
       };
       res.json(datas);
     })
